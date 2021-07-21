@@ -18,7 +18,6 @@ class Network
 
   def main_characters
     get_all_characters.find_all do |character|
-
       character.name == character.name.upcase && character.salary > 500_000
     end
   end
