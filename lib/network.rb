@@ -30,4 +30,23 @@ class Network
       [show, actors]
     }.to_h
   end
+
+  def shows_by_actor
+    get_all_characters.map { |character|
+      actor = character.actor
+
+      shows = @shows.find_all do |show|
+        actor_names = show.characters.map { |character| character.actor }
+        actor_names.include?(actor)
+      end
+
+      [actor, shows]
+    }.to_h
+  end
+
+  def prolific_actors
+    shows_by_actor.each.filter_map do |actor, show|
+      actor if show.length > 1
+    end
+  end
 end
