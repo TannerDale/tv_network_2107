@@ -14,7 +14,7 @@ RSpec.describe Show do
     it 'has attributes' do
       expect(knight_rider.name).to eq("Knight Rider")
       expect(knight_rider.creator).to eq("Glen Larson")
-      expect(knight_rider.characters).to eq([kitt, michael_knight])
+      expect(knight_rider.characters).to eq([michael_knight, kitt])
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe Show do
     end
 
     it 'has actor name' do
-      expect(knight_rider.actors).to eq(["David Hasselhoff", "Will Daniels"])
+      expect(knight_rider.actors).to eq(["David Hasselhoff", "William Daniels"])
     end
   end
 end
