@@ -49,6 +49,10 @@ RSpec.describe Network do
     nbc.add_show(knight_rider)
     nbc.add_show(parks_and_rec)
 
+    it 'can get all characters' do
+      expect(nbc.get_all_characters).to eq([michael_knight, kitt, leslie_knope, ron_swanson])
+    end
+
     it 'has main_characters' do
       expect(nbc.main_characters).to eq([kitt])
     end
@@ -58,7 +62,7 @@ RSpec.describe Network do
         knight_rider => ["David Hasselhoff", "William Daniels"],
         parks_and_rec => ["Amy Poehler", "Nick Offerman"]
       }
-      expect(nbc.actors_by_show).to eq(exepcted)
+      expect(nbc.actors_by_show).to eq(expected)
     end
   end
 end
