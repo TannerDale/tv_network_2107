@@ -93,6 +93,8 @@ RSpec.describe Network do
         "Amy Poehler" => [parks_and_rec],
         "Nick Offerman" => [parks_and_rec]
       }
+
+      expect(nbc.shows_by_actor).to eq(expected)
     end
 
     it 'has prolific actors' do
