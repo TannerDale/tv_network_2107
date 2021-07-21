@@ -33,10 +33,8 @@ class Network
   def shows_by_actor
     get_all_characters.map { |character|
       actor = character.actor
-
-      shows = @shows.find_all do |show|
-        actor_names = show.characters.map { |character| character.actor }
-        actor_names.include?(actor)
+      shows = actors_by_show.each.filter_map do |show, actors|
+        show if actors.include?(actor)
       end
 
       [actor, shows]
